@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 const MusicFetch = function () {
-  const [Songs, setSong] = useState([]);
-  const query = "rock"; 
+  const [songs, setSongs] = useState([]); 
+  const query = "pop"; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +13,7 @@ const MusicFetch = function () {
         );
         if (response.ok) {
           const data = await response.json();
-          setSong(data.data);
+          setSongs(data.data); 
         } else {
           console.error("Errore recupero dati");
         }
@@ -23,32 +23,30 @@ const MusicFetch = function () {
     };
 
     fetchData();
-  }, [query]);
+  }, []);
 
-  const NewSong = Songs.slice(0, 6);
+  const newSongs = songs.slice(0, 6); 
 
   return (
-    <>
-      <Container className="bg-dark">
-        <div className="container-fluid bg-dark">
-          <div className="row d-lg-none">
-            {NewSong.map((Songs) => (
-              <div
-                key={Songs.id}
-                className="col-6 col-sm-4 col-md-2 text-white mb-4"
-              >
-                <img
-                  src={Songs.album.cover_small}
-                  alt={Songs.title}
-                  className="radio-img rounded-4 w-100"
-                />
-                <p className="mt-2">{Songs.title}</p>
-              </div>
-            ))}
-          </div>
+    <Container className="bg-dark">
+      <div className="container-fluid bg-dark">
+        <div className="row d-sm-flex">
+          {newSongs.map((song) => (
+            <div
+              key={song.id}
+              className="col-sm-4 col-md-2 text-white mb-4"
+            >
+              <img
+                src={song.album.cover_small} 
+                alt={song.title} 
+                className="radio-img rounded-4 w-100"
+              />
+              <p className="mt-2">{song.title}</p> 
+            </div>
+          ))}
         </div>
-      </Container>
-    </>
+      </div>
+    </Container>
   );
 };
 
