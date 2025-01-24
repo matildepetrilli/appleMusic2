@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 const MusicFetch = function () {
-  const [Song, setSong] = useState([]);
-  const query = "rock"; // Puoi cambiare questa stringa con la tua ricerca dinamica
+  const [Songs, setSong] = useState([]);
+  const query = "rock"; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,24 +25,24 @@ const MusicFetch = function () {
     fetchData();
   }, [query]);
 
-  const NewSong = Song.slice(0, 6);
+  const NewSong = Songs.slice(0, 6);
 
   return (
     <>
       <Container className="bg-dark">
         <div className="container-fluid bg-dark">
           <div className="row d-lg-none">
-            {NewSong.map((Song) => (
+            {NewSong.map((Songs) => (
               <div
-                key={Song.id}
+                key={Songs.id}
                 className="col-6 col-sm-4 col-md-2 text-white mb-4"
               >
                 <img
-                  src={Song.album.cover_small}
-                  alt={Song.title}
+                  src={Songs.album.cover_small}
+                  alt={Songs.title}
                   className="radio-img rounded-4 w-100"
                 />
-                <p className="mt-2">{Song.title}</p>
+                <p className="mt-2">{Songs.title}</p>
               </div>
             ))}
           </div>
