@@ -1,0 +1,28 @@
+
+  
+  * {
+    background-color: #1F1F1F;
+    color:#f8f9fa !important;
+  }
+  .img-white {
+    filter: invert(1);
+  }
+  
+  
+  .toggler-red {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.5 12a.5.5 0 010-1h13a.5.5 0 010 1h-13zm0-5a.5.5 0 010-1h13a.5.5 0 010 1h-13zm0-5a.5.5 0 010-1h13a.5.5 0 010 1h-13z'/%3E%3C/svg%3E");
+  }
+
+  .carousel-img {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; 
+    height: 30vh; 
+    background-color: #f8f9fa; 
+  }
+
+  App.CSS   .app-background {
+    background-color: #1F1F1F ;
+    min-height: 100vh; 
+    color: white; 
+  }
