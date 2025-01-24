@@ -4,7 +4,8 @@ import MusicNavbar from "./assets/component/MusicNavbar";
 import MusicFooter from "./assets/component/MusicFooter";
 import MusicCarousel from "./assets/component/MusicCarousel";
 import MusicCard from "./assets/component/MusicCard";
-import NewCardMusic from "./assets/component/NewCardMusic";
+import MusicFetch from "./assets/component/MusicFetch";
+
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
       </h4>
       <MusicCard />
       <h4>Nuove uscite <i className="bi bi-chevron-right"> </i> </h4>
-      <NewCardMusic/>
+      <MusicFetch/>
       <MusicFooter />
     </>
   );
