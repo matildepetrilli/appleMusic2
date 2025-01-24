@@ -32,17 +32,17 @@ const MusicFetch = function () {
       <Container className="bg-dark">
         <div className="container-fluid bg-dark">
           <div className="row d-lg-none">
-            {NewSong.map((result) => (
+            {NewSong.map((Song) => (
               <div
-                key={result.id}
+                key={Song.id}
                 className="col-6 col-sm-4 col-md-2 text-white mb-4"
               >
                 <img
-                  src={result.album.cover_small}
-                  alt={result.title}
+                  src={Song.album.cover_small}
+                  alt={Song.title}
                   className="radio-img rounded-4 w-100"
                 />
-                <p className="mt-2">{result.title}</p>
+                <p className="mt-2">{Song.title}</p>
               </div>
             ))}
           </div>
